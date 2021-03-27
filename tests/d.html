@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Test D</title>
+    <style>
+        :focus {background: teal;}
+        body {
+            padding: 3em;
+        }
+
+    </style>
+</head>
+<body>
+  <!-- ALMANACH
+    https://almanac.httparchive.org/en/2019/accessibility
+    Does :focus styling fail? YES (the target is not focusable)
+    It CANNOT include links in title
+    Title CANNOT be easily copied
+    What is announced when navigating via headings?
+    What is announced when navigating via links?
+    ********* IRL (with CSS and everything) *********
+    Visual suggesting there is something to click on? Only on :hover and :focus
+    Visual after the anchor link is clicked? NO
+    Visual after the anchor link is clicked AGAIN? NO
+  -->
+  <h1>Test D</h1>
+  <h2>
+    <a id="a" href="#a">Section A</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+  <h2>
+    <a id="b" href="#b">Section B</a>
+  </h2>
+  <p>Lorem Ipsum...</p>  <h2>
+    <a id="c" href="#c">Section C</a>
+  </h2>
+  <p>Lorem Ipsum...</p>  <h2>
+    <a id="d" href="#d">Section D</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+</body>
+</html>     

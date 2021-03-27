@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Test I</title>
+    <style>
+        :focus {background: teal;}
+        body {
+            padding: 3em;
+        }
+
+
+    </style>
+</head>
+<body>
+  <!-- MDN
+    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
+    Does :focus styling fail? YES (the target is not focusable)
+    It CANNOT include links in title
+    Title CANNOT be easily copied
+    What is announced when navigating via headings?
+    What is announced when navigating via links?
+    ********* IRL (with CSS and everything) *********
+    Visual suggesting there is something to click on? NO
+    Visual after the anchor link is clicked? NO
+    Visual after the anchor link is clicked AGAIN? NO
+  -->
+  <h1>Test I</h1>
+  <h2 id="a">
+    <a href="#a" title="Permalink to Section A">Section A</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+
+
+</body>
+</html>     

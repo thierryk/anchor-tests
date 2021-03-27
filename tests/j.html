@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Test J</title>
+    <style>
+        :focus {background: teal;}
+        body {
+            padding: 3em;
+        }
+
+
+    </style>
+</head>
+<body>
+  <!-- Nicolas Hosey
+    https://nicolas-hoizey.com/articles/2021/02/25/accessible-anchor-links-with-markdown-it-and-eleventy/
+    Does :focus styling fail? YES (the target is not focusable)
+    It CAN include links in title
+    Title CAN be easily copied
+    What is announced when navigating via headings?
+    What is announced when navigating via links?
+    ********* IRL (with CSS and everything) *********
+    Visual suggesting there is something to click on? YES
+    Visual after the anchor link is clicked? YES very subtle (à la 37 signals)
+    Visual after the anchor link is clicked AGAIN? NO (:target)
+  -->
+  <h1>Test J</h1>
+  <h2 id="a">Section A</h2>
+  <a href="#a">
+    <span aria-hidden="true">[SVG]</span>
+    <span>Section titled Section A</span>
+  </a>
+  <p>Lorem Ipsum...</p>
+
+</body>
+</html>     

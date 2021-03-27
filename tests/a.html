@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Test A</title>
+    <style>
+        body {
+            padding: 3em;
+        }
+        :target::after {
+            content: " Target Anchor";
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- My Fav?
+    Does :focus styling fail? YES (target is not focusable)
+    Is " Target Anchor" (via CSS) good or bad? Should it be between parenthesis?
+    Is the @title spoken?
+    It CANNOT include links in title
+    Title CANNOT be easily copied w/o CSS
+    What is announced when navigating via headings?
+    What is announced when navigating via links?
+  -->
+  <h1>Test A</h1>
+  <h2 id="a">
+    <a href="#a" title="link to anchor">Section A</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+  <h2 id="b">
+    <a href="#b" title="link to anchor">Section B</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+  <h2 id="c">
+    <a href="#c" title="link to anchor">Section C</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+  <h2 id="d">
+    <a href="#d" title="link to anchor">Section D</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+</body>
+</html> 

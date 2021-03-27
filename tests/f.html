@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Test F</title>
+    <style>
+        :focus {background: teal;}
+        body {
+            padding: 3em;
+        }
+
+    </style>
+</head>
+<body>
+  <!-- ADRIAN ROSELLI
+    https://adrianroselli.com/2020/02/link-targets-and-3-2-5.html
+    Does :focus styling fail? YES (the target is not focusable)
+    It CAN include links in title
+    Title CAN be easily copied
+    What is announced when navigating via headings?
+    What is announced when navigating via links?
+    ********* IRL (with CSS and everything) *********
+    Visual suggesting there is something to click on? YES
+    Visual after the anchor link is clicked? YES
+    Visual after the anchor link is clicked AGAIN? NO
+    -->
+  <h1>Test F</h1>  
+  <h2 id="a">
+    Section A
+    <a href="#a">
+      <span aria-hidden="true">#</span>
+      <span>anchor</span> 
+    </a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+
+</body>
+</html>     
