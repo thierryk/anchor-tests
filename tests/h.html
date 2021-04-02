@@ -3,17 +3,14 @@
 <head>
     <meta charset="utf-8">
     <title>Test H</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        :focus {background: teal;}
-        body {
-            padding: 3em;
-        }
         /* custom */
         h2 {
           position: relative;
           z-index: 3;
         }
-        a.self-link {
+        a:not(#irl) {
             position: absolute;
             top: 0;
             left: -2.5em;
@@ -24,46 +21,50 @@
             opacity: 0.5;
             text-decoration: none;
         }
-        a.self-link::before {
+        a:not(#irl)::before {
             content: "§";
         }
-
+        a:not(#irl):hover {
+    opacity: 1;
+    text-decoration: none;
+}
+:target {
+    animation: 3s ease 0s 1 fade-target;
+}
+@keyframes fade-target {
+  0%, 50% { background:yellow }
+}
     </style>
 </head>
 <body>
-  <!-- WHATWG.org
-    https://html.spec.whatwg.org/multipage/links.html
-    Does :focus styling fail? YES (target is not focusable)
-    CAN include links in title
-    Title CAN be easily copied
-    Anchor is a small target (area of the character)
-    What is announced? §?
-    What is announced when navigating via headings?
-    What is announced when navigating via links?
-    ********* IRL (with CSS and everything) *********
-    Visual suggesting there is something to click on? YES (very subtle)    
-    Visual after the anchor link is clicked? NO
-    Visual after the anchor link is clicked AGAIN? NO
+  <!-- 
+    
     -->
   <h1>Test H</h1>
+  <h2>Markup</h2>
+  <pre tabindex="0" title="Markup Example">
+&lt;h2 id="a"&gt;
+  Section A
+  &lt;a href="#a">&lt;/a&gt;
+&lt;/h2&gt;</pre>  
   <h2 id="a">
     Section A
-    <a href="#a" class="self-link"></a>
+    <a href="#a"></a>
   </h2>
   <p>Lorem Ipsum...</p>
   <h2 id="b">
     Section B
-    <a href="#b" class="self-link"></a>
+    <a href="#b"></a>
   </h2>
   <p>Lorem Ipsum...</p>  
   <h2 id="c">
     Section C
-    <a href="#c" class="self-link"></a>
+    <a href="#c"></a>
   </h2>
   <p>Lorem Ipsum...</p>  
   <h2 id="d">
     Section D
-    <a href="#d" class="self-link"></a>
+    <a href="#d"></a>
   </h2>
   <p>Lorem Ipsum...</p>
 </body>

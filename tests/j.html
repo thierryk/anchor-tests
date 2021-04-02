@@ -3,35 +3,212 @@
 <head>
     <meta charset="utf-8">
     <title>Test J</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        :focus {background: teal;}
-        body {
-            padding: 3em;
-        }
-
-
+      h2[id] {
+        line-height: 1.2;
+    font-weight: 400;
+    color: var(--color-primary-lighter-2);
+    position: relative;
+    margin: 0;
+      }
+h2[id]:hover + a:not(#irl) {
+    color: var(--color-link-hover);
+    background-color: var(--color-link-hover-bg);
+}
+svg {
+  width: 1em;
+  height: auto; 
+}
+a:not(#irl):hover svg,
+a:not(#irl):focus svg,
+h2:hover + a:not(#irl) svg {
+    fill: #fff;
+}
+:not(#irl):link, 
+:not(#irl):visited {
+    padding: 0 .25rem;
+    border-radius: .3em;
+    color: var(--color-meta);
+    text-decoration: none;
+    color: var(--color-link);
+    background-color: var(--color-link-bg);
+    -webkit-text-decoration-line: underline;
+    text-decoration-line: underline;
+    -webkit-text-decoration-color: var(--color-link-decoration);
+    text-decoration-color: var(--color-link-decoration);
+    text-decoration-thickness: 2px;
+    padding-left: .1em;
+    padding-right: .1em;
+    margin-left: -.1em;
+}
+a:not(#irl) {
+  display: grid;
+  grid-row-start: 1;
+  justify-content: center;
+  align-content: center;
+}
+a:not(#irl):focus, 
+a:not(#irl):hover {
+    color: var(--color-link-hover);
+    background-color: var(--color-link-hover-bg);
+    -webkit-text-decoration: var(--color-link-hover-decoration);
+    text-decoration: var(--color-link-hover-decoration);
+    outline: none;
+}
+.visually-hidden:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(100%);
+    clip-path: inset(100%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+.heading-wrapper {
+    display: grid;
+    align-items: stretch;
+    gap: .5rem;
+    --flow-space: var(--gap3);
+    grid-template-columns: -webkit-min-content auto;
+    grid-template-columns: min-content auto;
+    margin-left: -2rem;
+}
+:target {
+    animation: 1s ease 0s 1 fade-target;
+}
+@keyframes fade-target {
+  0%, 50% { background:yellow }
+}
+:root {
+  --gap: 1rem;
+    --gap2: calc(var(--gap)*2);
+    --gap3: calc(var(--gap)*3);
+    --flow-space: 1em;
+    --font-family-serif: Georgia,"Times New Roman",Times,serif;
+    --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    --font-family-monospace: "Courier New",Courier,monospace;
+    --font-size-base: 0.9rem;
+    --font-size-responsive: 0.5vw;
+    --font-size-scale: 1.2;
+    --font-size-m: calc(var(--font-size-base) + var(--font-size-responsive));
+    --font-size-m: min(calc(var(--font-size-base) + var(--font-size-responsive)),1.4rem);
+    --font-size-s: calc(var(--font-size-m)/var(--font-size-scale));
+    --font-size-xs: calc(var(--font-size-s)/var(--font-size-scale));
+    --font-size-l: calc(var(--font-size-m)*var(--font-size-scale));
+    --font-size-xl: calc(var(--font-size-l)*var(--font-size-scale));
+    --font-size-xxl: calc(var(--font-size-xl)*var(--font-size-scale));
+    --font-size-xxxl: calc(var(--font-size-xxl)*var(--font-size-scale));
+    --font-size-xxxxl: calc(var(--font-size-xxxl)*var(--font-size-scale));
+    --layout-max: 60rem;
+    --hue: 270;
+    --sat: 50%;
+    --sat-step: 4%;
+    --lum: 40%;
+    --lum-step: 7%;
+    --color-primary: hsl(var(--hue),var(--sat),var(--lum));
+    --color-primary-lighter-1: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*1),calc(var(--lum) + var(--lum-step)*1));
+    --color-primary-darker-1: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*1),calc(var(--lum) - var(--lum-step)*1));
+    --color-primary-lighter-2: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*2),calc(var(--lum) + var(--lum-step)*2));
+    --color-primary-darker-2: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*2),calc(var(--lum) - var(--lum-step)*2));
+    --color-primary-lighter-3: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*3),calc(var(--lum) + var(--lum-step)*3));
+    --color-primary-darker-3: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*3),calc(var(--lum) - var(--lum-step)*3));
+    --color-primary-lighter-4: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*4),calc(var(--lum) + var(--lum-step)*4));
+    --color-primary-darker-4: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*4),calc(var(--lum) - var(--lum-step)*4));
+    --color-primary-lighter-5: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*5),calc(var(--lum) + var(--lum-step)*5));
+    --color-primary-darker-5: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*5),calc(var(--lum) - var(--lum-step)*5));
+    --color-primary-lighter-6: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*6),calc(var(--lum) + var(--lum-step)*6));
+    --color-primary-darker-6: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*6),calc(var(--lum) - var(--lum-step)*6));
+    --color-primary-lighter-7: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*7),calc(var(--lum) + var(--lum-step)*7));
+    --color-primary-darker-7: hsl(var(--hue),calc(var(--sat) - var(--sat-step)*7),calc(var(--lum) - var(--lum-step)*7));
+    --color-secondary: #eb5600;
+    --color-link: var(--color-primary);
+    --color-link-bg: inherit;
+    --color-link-decoration: var(--color-primary-lighter-6);
+    --color-link-hover: #fff;
+    --color-link-hover-bg: var(--color-primary);
+    --color-link-hover-decoration: none;
+    --color-meta: #777;
+    --color-meta-decoration: #999;
+    --color-gold: #927b07;
+    --color-yellow-light: #fffec2;
+    --border-width: 0.15em;
+}
     </style>
 </head>
 <body>
-  <!-- Nicolas Hosey
-    https://nicolas-hoizey.com/articles/2021/02/25/accessible-anchor-links-with-markdown-it-and-eleventy/
-    Does :focus styling fail? YES (the target is not focusable)
-    It CAN include links in title
-    Title CAN be easily copied
-    What is announced when navigating via headings?
-    What is announced when navigating via links?
-    ********* IRL (with CSS and everything) *********
-    Visual suggesting there is something to click on? YES
-    Visual after the anchor link is clicked? YES very subtle (à la 37 signals)
-    Visual after the anchor link is clicked AGAIN? NO (:target)
+  <!-- 
+    
   -->
   <h1>Test J</h1>
-  <h2 id="a">Section A</h2>
-  <a href="#a">
-    <span aria-hidden="true">[SVG]</span>
-    <span>Section titled Section A</span>
-  </a>
-  <p>Lorem Ipsum...</p>
 
+  <h2>Markup</h2>
+  <pre tabindex="0" title="Markup Example">
+&lt;div class="heading-wrapper"&gt;    
+  &lt;h2 id="a"&gt;Section A&lt;/h2&gt;
+  &lt;a href="#a"&gt;
+    &lt;span aria-hidden="true"&gt;
+      &lt;svg focusable="false" role="image" ... &gt; ... &lt;/svg&gt;
+    &lt;/span&gt;
+    &lt;span class="visually-hidden"&gt;Section titled Section A&lt;/span&gt;
+  &lt;/a&gt;
+&lt;/div&gt;</pre>
+  <div class="heading-wrapper">
+<h2 id="a">Section A</h2>
+  <a href="#a">
+    <span aria-hidden="true">
+      <svg focusable="false" role="image" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+        <path fill-rule="evenodd"
+            d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+        </path>
+      </svg>
+    </span>
+    <span class="visually-hidden">Section titled Section A</span>
+  </a>
+</div>
+  <p>Lorem Ipsum...</p>
+<div class="heading-wrapper">
+  <h2 id="b">Section B</h2>
+  <a href="#b">
+    <span aria-hidden="true">
+      <svg focusable="false" role="image" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+        <path fill-rule="evenodd"
+            d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+        </path>
+      </svg>
+    </span>
+    <span class="visually-hidden">Section titled Section B</span>
+  </a>
+</div>
+  <p>Lorem Ipsum...</p>
+<div class="heading-wrapper">  
+  <h2 id="c">Section C</h2>
+  <a href="#c">
+    <span aria-hidden="true">
+      <svg focusable="false" role="image" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+        <path fill-rule="evenodd"
+            d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+        </path>
+      </svg>
+    </span>
+    <span class="visually-hidden">Section titled Section C</span>
+  </a>
+</div>  
+  <p>Lorem Ipsum...</p>
+<div class="heading-wrapper">  
+  <h2 id="d">Section D</h2>
+  <a href="#d">
+    <span aria-hidden="true">
+      <svg focusable="false" role="image" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+        <path fill-rule="evenodd"
+            d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+        </path>
+      </svg>
+    </span>
+    <span class="visually-hidden">Section titled Section D</span>
+  </a>
+</div>
+  <p>Lorem Ipsum...</p>
 </body>
 </html>     

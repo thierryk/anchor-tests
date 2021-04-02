@@ -3,34 +3,47 @@
 <head>
     <meta charset="utf-8">
     <title>Test I</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        :focus {background: teal;}
-        body {
-            padding: 3em;
-        }
-
-
+a:not(#irl) {
+    text-decoration: none;
+    color: #212121;
+}
+a:not(#irl):hover {
+    text-decoration: underline;
+}
     </style>
 </head>
 <body>
-  <!-- MDN
-    https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a
-    Does :focus styling fail? YES (the target is not focusable)
-    It CANNOT include links in title
-    Title CANNOT be easily copied
-    What is announced when navigating via headings?
-    What is announced when navigating via links?
-    ********* IRL (with CSS and everything) *********
-    Visual suggesting there is something to click on? NO
-    Visual after the anchor link is clicked? NO
-    Visual after the anchor link is clicked AGAIN? NO
+  <!-- 
+    
   -->
   <h1>Test I</h1>
+  <p>See it <a id="irl" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a">IRL</a></p>
+  <h2>Markup</h2>
+  <pre tabindex="0" title="Markup Example">
+&lt;h2 id="a"&gt;
+  &lt;a href="#a" title="Permalink to Section A"&gt;Section A&lt;/a&gt;
+&lt;/h2&gt;</pre>
   <h2 id="a">
     <a href="#a" title="Permalink to Section A">Section A</a>
   </h2>
   <p>Lorem Ipsum...</p>
-
-
+  <h2 id="b">
+    <a href="#b" title="Permalink to Section B">Section B</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+  <h2 id="c">
+    <a href="#c" title="Permalink to Section C">Section C</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+  <h2 id="d">
+    <a href="#d" title="Permalink to Section D">Section D</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
+  <h2 id="e">
+    <a href="#e" title="Permalink to Section E">Section E</a>
+  </h2>
+  <p>Lorem Ipsum...</p>
 </body>
 </html>     

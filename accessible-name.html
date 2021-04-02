@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Accessible Name</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        :focus {
+            outline: 3px solid teal;
+        }
+        li {
+            margin: 1em 0;
+            padding: 1em;
+            border-radius: 3px;
+            background: rgb(202, 249, 222);
+        }
+        .nope {
+            background: rgb(248, 209, 216);
+        }
+        pre + p {
+            margin-top: 1em;
+        }
+        p {
+            margin: .6em 0 0;
+        }
+        li p::before {
+            content: "- " /"";
+        }
+        .css-generated-content::after {
+            content: " Anchor Link #7";
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
+        .screen-reader-only {
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
+        }
+        svg {
+            fill: blue;
+            width: 1.5em;
+            height: 1.5em;
+            margin-bottom: -.5em;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Accessible Name</h1>
+    <p>All links but the first one are given an Accessible Name via various techniques (<mark>highlighted</mark> below).</p>
+    <ol>
+        <li class="nope">
+            <a href="#anchor">
+                <svg focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path fill-rule="evenodd"
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg>
+            </a>
+            <pre>
+&lt;a href="#"&gt;
+    &lt;svg focusable="false" ...&gt; ... &lt;/svg&gt;
+&lt;/a&gt;</pre>
+            <p>This link does not have an Accessible Name. In VoiceOver (VO) it is announced as "<strong>unlabelled image [filename]</strong>" ([filename] being "accessible-name.html" for this document).</p>
+            <p>The rotor menu in VO displays "accessible-name.html".</p>
+        </li>
+        <li class="nope">
+            <a href="#anchor">
+                <svg focusable="false" role="image" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <title>Anchor Link #2</title>
+                    <path fill-rule="evenodd"
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg>
+            </a>
+            <pre>
+&lt;a href="#"&gt;
+    &lt;svg focusable="false" role="image" ...&gt; 
+        <mark>&lt;title&gt;Anchor Link #2&lt;/title&gt;</mark>
+        ... 
+    &lt;/svg&gt;
+&lt;/a&gt;</pre>
+            <p>The rotor menu in VO displays "accessible-name.html" in Safari and Firefox (MacOS).</p>
+            <p>The <code>title</code> here creates a "tooltip".</p>
+        </li>
+        <li class="nope">
+            <a href="#anchor" aria-label="Anchor Link #3">
+                <svg focusable="false" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path fill-rule="evenodd"
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg>
+            </a>
+            <pre>
+&lt;a href="#" <mark>aria-label="Anchor Link #3"</mark>&gt;
+    &lt;svg focusable="false" aria-hidden="true" ...&gt; 
+        ... 
+    &lt;/svg&gt;
+&lt;/a&gt;</pre>
+            <p>Relying on <code>aria-label</code> is not the best choice when it comes to Internationalization</p>
+        </li>
+        <li class="nope">
+            <a href="#anchor">
+                <svg focusable="false" role="image" title="Anchor Link #4" height="16" version="1.1" viewBox="0 0 16 16"
+                    width="16">
+                    <path fill-rule="evenodd"
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg>
+            </a>
+            <pre>
+&lt;a href="#"&gt;
+    &lt;svg focusable="false" role="image" <mark>title="Anchor Link #4"</mark> ...&gt;
+        ... 
+    &lt;/svg&gt;
+&lt;/a&gt;</pre>
+            <p>Safari and Firefox (MacOS) announces this link as "image accessible-name.html".</p>
+            <p>The rotor menu in VO displays "accessible-name.html" in Safari.</p>
+            <p>The <code>title</code> here does <strong>not</strong> create a "tooltip".</p>
+        </li>
+        <li>
+            <a href="#anchor" title="Anchor Link #5">
+                <svg focusable="false" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path fill-rule="evenodd"
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg>
+            </a>
+            <pre>
+&lt;a href="#" <mark>title="Anchor Link #5"</mark>&gt;
+    &lt;svg focusable="false" role="image" ...&gt;
+        ... 
+    &lt;/svg&gt;
+&lt;/a&gt;</pre>
+            <p>The <code>title</code> here creates a "tooltip".</p>    
+        </li>
+        <li>
+            <a href="#anchor">
+                <svg focusable="false" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path fill-rule="evenodd"
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg>
+                <span class="screen-reader-only">Anchor Link #6</span>
+            </a>
+            <pre>
+&lt;a href="#"&gt;
+    &lt;svg focusable="false" aria-hidden="true" ...&gt;
+        ... 
+    &lt;/svg&gt;
+    <mark>&lt;span class="screen-reader-only"&gt;Anchor Link #6&lt;/span&gt;</mark>
+&lt;/a&gt;</pre>
+        </li>
+        <li class="nope">
+            <a href="#anchor" class="css-generated-content">
+                <svg focusable="false" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path fill-rule="evenodd"
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg>
+            </a>
+            <pre>
+&lt;a href="#" <mark>class="css-generated-content"</mark>&gt;
+    &lt;svg focusable="false" aria-hidden="true" ...&gt;
+        ... 
+    &lt;/svg&gt;
+&lt;/a&gt;</pre>
+            <p>The rotor menu in VO displays "accessible-name.html" in Chrome.</p>
+            <p>Relying on CSS generated content is not the best choice when it comes to Internationalization.</p>
+
+        </li>
+        <li class="nope">
+            <a href="#anchor">
+                <svg role="image" aria-label="Anchor Link #8" focusable="false" height="16" version="1.1" viewBox="0 0 16 16" width="16">
+                    <path fill-rule="evenodd"
+                        d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z">
+                    </path>
+                </svg>
+            </a>
+            <pre>
+&lt;a href="#"&gt;
+    &lt;svg  role="image" <mark>aria-label="Anchor Link #8"</mark> focusable="false" ...&gt; 
+        ... 
+    &lt;/svg&gt;
+&lt;/a&gt;</pre>
+            <p>Relying on <code>aria-label</code> is not the best choice when it comes to Internationalization</p>
+        </li>
+    </ol>
+<p><strong>Note</strong>: it is also possible to use <mark>aria-labelledby</mark> to reference a node containing the label (pointing to a heading's <code>id</code> for example).</p>
+</body>
+</html>

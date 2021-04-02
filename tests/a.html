@@ -3,40 +3,50 @@
 <head>
     <meta charset="utf-8">
     <title>Test A</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        body {
-            padding: 3em;
-        }
         :target::after {
-            content: " Target Anchor";
-            
+            content: " (" attr(title) ") ";
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute; 
         }
     </style>
 </head>
 <body>
-    <!-- My Fav?
-    Does :focus styling fail? YES (target is not focusable)
-    Is " Target Anchor" (via CSS) good or bad? Should it be between parenthesis?
-    Is the @title spoken?
-    It CANNOT include links in title
-    Title CANNOT be easily copied w/o CSS
-    What is announced when navigating via headings?
-    What is announced when navigating via links?
+    <!--
+
   -->
   <h1>Test A</h1>
-  <h2 id="a">
+  <h2>Markup</h2>
+  <pre tabindex="0" title="Markup Example">
+&lt;h2 id="a"&gt;
+  &lt;a href="#a" title="link to anchor"&gt;Section A&lt;/a&gt;
+&lt;/h2&gt;</pre>
+<h2>CSS</h2>
+  <pre tabindex="0" title="CSS Example">
+:target::after {
+  content: " (" attr(title) ") ";
+  ...
+}</pre>
+  <h2 id="a" title="Target Anchor">
     <a href="#a" title="link to anchor">Section A</a>
   </h2>
   <p>Lorem Ipsum...</p>
-  <h2 id="b">
+  <h2 id="b" title="Target Anchor">
     <a href="#b" title="link to anchor">Section B</a>
   </h2>
   <p>Lorem Ipsum...</p>
-  <h2 id="c">
+  <h2 id="c" title="Target Anchor">
     <a href="#c" title="link to anchor">Section C</a>
   </h2>
   <p>Lorem Ipsum...</p>
-  <h2 id="d">
+  <h2 id="d" title="Target Anchor">
     <a href="#d" title="link to anchor">Section D</a>
   </h2>
   <p>Lorem Ipsum...</p>

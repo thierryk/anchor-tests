@@ -3,42 +3,41 @@
 <head>
     <meta charset="utf-8">
     <title>Test C</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        body {
-            padding: 3em;
-        }
         :target::after {
-            content: " Target Anchor";
-        }
-        [title]::after {
             content: " (" attr(title) ") ";
         }
     </style>
 </head>
 <body>
   <!--
-    Does :focus styling fail? NO (the heading is focusable)
-    Is " Target Anchor" good or bad? Should it be between parenthesis?
-    It CANNOT include links in title
-    Title CANNOT be easily copied
-    Is the @title spoken?
-    What is announced when navigating via headings?
-    What is announced when navigating via links?
+
   -->
   <h1>Test C</h1>
-  <h2 id="a" tabindex="-1">
+  <h2>Markup</h2>
+  <pre tabindex="0" title="Markup Example">
+&lt;h2 id="a" tabindex="-1" title="Anchor"&gt;
+  &lt;a href="#a" title="in-page link">Section A&lt;/a&gt;
+&lt;/h2&gt;</pre>
+    <h2>CSS</h2>
+    <pre tabindex="0" title="CSS Example">
+:target::after {
+  content: " (" attr(title) ") ";
+}</pre>    
+  <h2 id="a" tabindex="-1" title="Anchor">
     <a href="#a" title="in-page link">Section A</a>
   </h2>
   <p>Lorem Ipsum...</p>
-  <h2 id="b" tabindex="-1">
-    <a href="#b" title="in-page link">Section B</a>
+  <h2 id="b" tabindex="-1" title="Anchor">
+    <a href="#b">Section B</a>
   </h2>
   <p>Lorem Ipsum...</p>
-  <h2 id="c" tabindex="-1">
+  <h2 id="c" tabindex="-1" title="Anchor">
     <a href="#c" title="in-page link">Section C</a>
   </h2>
   <p>Lorem Ipsum...</p>
-  <h2 id="d" tabindex="-1">
+  <h2 id="d" tabindex="-1" title="Anchor">
     <a href="#d" title="in-page link">Section D</a>
   </h2>
   <p>Lorem Ipsum...</p>

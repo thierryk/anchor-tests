@@ -2,15 +2,15 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
-    <title>Tabindex Exampe</title>
+    <title>Tabindex Example</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        body {
-            padding: 3em;
-        }
+
+
     </style>
 </head>
 <body>
-  <h1>Tabindex</h1>
+  <h1>Focusing on the Target</h1>
   <p>The headings below are the target of the link anchors</p>
   <h2 id="a">
     <a href="#a" title="link to anchor">Section A</a>
@@ -26,15 +26,16 @@
   </h2>
   <p>Markup:</p>
   <pre>
-    &lt;h2 id="b" tabindex="-1"&gt;
+    &lt;h2 id="b" <mark>tabindex="-1"</mark>&gt;
       &lt;a href="#b" title="link to anchor">Section B&lt;/a&gt;
     &lt;/h2&gt;
   </pre>
   <h2 id="c" tabindex="0">
     <a href="#c" title="link to anchor">Section C</a>
   </h2>
+  <p>Markup:</p>
   <pre>
-    &lt;h2 id="c" tabindex="0"&gt;
+    &lt;h2 id="c" <mark>tabindex="0"</mark>&gt;
       &lt;a href="#c" title="link to anchor">Section C&lt;/a&gt;
     &lt;/h2&gt;
   </pre>

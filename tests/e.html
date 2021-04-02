@@ -3,29 +3,41 @@
 <head>
     <meta charset="utf-8">
     <title>Test E</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        :focus {background: teal;}
-        body {
-            padding: 3em;
-        }
 
     </style>
 </head>
 <body>
   <!--
-    Does :focus styling fail? y/n
-    Can include links in title  
-    What is announced? "Section X" or "Anchor Link"? 
-    What is announced when navigating via links?
+
   -->  
   <h1>Test E</h1>
+  <h2>Markup</h2>
+  <pre tabindex="0" title="Markup Example">
+&lt;h2 id="a" tabindex="-1"&gt;
+  &lt;a href="#a" aria-labelledby="a"&gt;Anchor Link to&lt;/a&gt;
+  Section A
+&lt;/h2&gt;</pre>
   <h2 id="a" tabindex="-1">
+    <a href="#a" aria-labelledby="a">Anchor Link to</a>
     Section A
-    <a href="#a" aria-labelledby="a">Anchor Link</a>
   </h2>
   <p>Lorem Ipsum...</p>
-
-
- 
+  <h2 id="b" tabindex="-1">
+    <a href="#b" aria-labelledby="b">Anchor Link to</a>
+    Section B
+  </h2>
+  <p>Lorem Ipsum...</p>  
+  <h2 id="c" tabindex="-1">
+    <a href="#c" aria-labelledby="c">Anchor Link to</a>
+    Section C
+  </h2>
+  <p>Lorem Ipsum...</p>  
+  <h2 id="d" tabindex="-1">
+    <a href="#d" aria-labelledby="d">Anchor Link to</a>
+    Section D
+  </h2>
+  <p>Lorem Ipsum...</p>
 </body>
 </html>     

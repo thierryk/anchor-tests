@@ -2,41 +2,55 @@
 <html lang="en-US">
 <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="../styles.css">
     <title>Test D</title>
     <style>
-        :focus {background: teal;}
-        body {
-            padding: 3em;
-        }
-
+a:not(#irl) {
+    color: #0b1423;
+    text-decoration: none;
+    padding-left: 30px;
+    margin-left: -30px;
+}
+a:not(#irl):focus, 
+a:not(#irl):hover {
+    text-decoration: underline;
+}
+a:not(#irl):hover::before, 
+a:not(#irl):focus::before {
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' aria-hidden='true'%3E%3Cpath d='M4.6 20c-1 0-2-.4-2.7-1.1l-.8-.8c-1.5-1.5-1.5-3.9 0-5.4l5-5c.8-.7 1.7-1.1 2.7-1.1s2 .4 2.7 1.1l.8.8c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-.8-.8c-.5-.5-1.2-.8-1.9-.8s-1.4.3-1.9.8l-5 5c-1.1 1.1-1.1 2.8 0 3.9l.8.8c.5.5 1.2.8 1.9.8s1.4-.3 1.9-.8l3.5-3.5c.2-.2.6-.2.8 0 .2.2.2.6 0 .8L7.3 19c-.7.6-1.7 1-2.7 1z'/%3E%3Cpath d='M11.2 13.4c-1 0-2-.4-2.7-1.1-.2-.2-.2-.6 0-.8s.6-.2.8 0c.5.5 1.2.8 1.9.8s1.4-.3 1.9-.8l5-5c1.1-1.1 1.1-2.8 0-3.9l-.8-.8c-1.1-1.1-2.8-1.1-3.9 0L10 5.4c-.2.2-.6.2-.8 0s-.2-.6 0-.8l3.5-3.5c1.5-1.5 3.9-1.5 5.4 0l.8.8c1.5 1.5 1.5 3.9 0 5.4l-5 5c-.8.7-1.7 1.1-2.7 1.1z'/%3E%3C/svg%3E");
+    content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' aria-hidden='true'%3E%3Cpath d='M4.6 20c-1 0-2-.4-2.7-1.1l-.8-.8c-1.5-1.5-1.5-3.9 0-5.4l5-5c.8-.7 1.7-1.1 2.7-1.1s2 .4 2.7 1.1l.8.8c.2.2.2.6 0 .8-.2.2-.6.2-.8 0l-.8-.8c-.5-.5-1.2-.8-1.9-.8s-1.4.3-1.9.8l-5 5c-1.1 1.1-1.1 2.8 0 3.9l.8.8c.5.5 1.2.8 1.9.8s1.4-.3 1.9-.8l3.5-3.5c.2-.2.6-.2.8 0 .2.2.2.6 0 .8L7.3 19c-.7.6-1.7 1-2.7 1z'/%3E%3Cpath d='M11.2 13.4c-1 0-2-.4-2.7-1.1-.2-.2-.2-.6 0-.8s.6-.2.8 0c.5.5 1.2.8 1.9.8s1.4-.3 1.9-.8l5-5c1.1-1.1 1.1-2.8 0-3.9l-.8-.8c-1.1-1.1-2.8-1.1-3.9 0L10 5.4c-.2.2-.6.2-.8 0s-.2-.6 0-.8l3.5-3.5c1.5-1.5 3.9-1.5 5.4 0l.8.8c1.5 1.5 1.5 3.9 0 5.4l-5 5c-.8.7-1.7 1.1-2.7 1.1z'/%3E%3C/svg%3E") / '';
+    left: -25px;
+    position: relative;
+    float: left;
+    width: 0;
+    height: 0;
+}
     </style>
 </head>
 <body>
-  <!-- ALMANACH
-    https://almanac.httparchive.org/en/2019/accessibility
-    Does :focus styling fail? YES (the target is not focusable)
-    It CANNOT include links in title
-    Title CANNOT be easily copied
-    What is announced when navigating via headings?
-    What is announced when navigating via links?
-    ********* IRL (with CSS and everything) *********
-    Visual suggesting there is something to click on? Only on :hover and :focus
-    Visual after the anchor link is clicked? NO
-    Visual after the anchor link is clicked AGAIN? NO
+  <!-- 
+
   -->
   <h1>Test D</h1>
-  <h2>
-    <a id="a" href="#a">Section A</a>
+  <h2>Markup</h2>
+  <pre tabindex="0" title="Markup Example">
+&lt;h2 id="a"&gt;
+  &lt;a href="#a">Section A&lt;/a&gt;
+&lt;/h2&gt;</pre>
+  <h2 id="a">
+    <a href="#a">Section A</a>
   </h2>
   <p>Lorem Ipsum...</p>
-  <h2>
-    <a id="b" href="#b">Section B</a>
+  <h2 id="b">
+    <a href="#b">Section B</a>
   </h2>
-  <p>Lorem Ipsum...</p>  <h2>
-    <a id="c" href="#c">Section C</a>
+  <p>Lorem Ipsum...</p>  
+  <h2 id="c">
+    <a href="#c">Section C</a>
   </h2>
-  <p>Lorem Ipsum...</p>  <h2>
-    <a id="d" href="#d">Section D</a>
+  <p>Lorem Ipsum...</p>  
+  <h2 id="d">
+    <a href="#d">Section D</a>
   </h2>
   <p>Lorem Ipsum...</p>
 </body>

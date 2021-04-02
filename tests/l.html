@@ -3,41 +3,64 @@
 <head>
     <meta charset="utf-8">
     <title>Test L</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
-        :focus {background: teal;}
-        body {
-            padding: 3em;
-        }
         /* custom */
-        h2 {
+        a:not(#irl) {
+          text-decoration: none;
+          margin-left: -21px;
+          margin-right: 5px;
           position: relative;
-          z-index: 3;
+          scroll-margin-top: 100px;
+        }
+        a:not(#irl):focus, 
+        a:not(#irl):hover {
+            opacity: .66;
+        }
+        a:not(#irl) svg {
+            position: relative;
+        }
+        a:not(#irl):target:before {
+            -webkit-animation: yellowflash-bg 2s;
+            animation: yellowflash-bg 2s;
+        }
+        @-webkit-keyframes yellowflash-bg {
+          0% {
+            background:#ff0
+          } to {
+            background:0 0
+          }
+        }
+        a:not(#irl):before {
+            content: "";
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-  <!-- CSS-TRICKS
-    https://css-tricks.com/taming-blend-modes-difference-and-exclusion/    Does :focus styling fail? YES (target is not focusable)
-    CAN include links in title
-    Title CAN be easily copied
-    Anchor is a small target (area of the character)
-
-    LINK HAS NO ACCESSIBLE NAME?
-
-    What is announced? §?
-    What is announced when navigating via headings?
-    What is announced when navigating via links?
-    ********* IRL (with CSS and everything) *********
-    Visual suggesting there is something to click on? YES (very subtle)    
-    Visual after the anchor link is clicked? NO
-    Visual after the anchor link is clicked AGAIN? NO
+  <!-- 
+    
     -->
   <h1>Test L</h1>
+
+  <pre tabindex="0" title="Markup Example">&lt;h2&gt;
+  &lt;a id="a" href="#a" aria-hidden="true"&gt;
+    &lt;svg aria-hidden="true" ... &gt;
+      ...
+    &lt;/svg&gt;
+  &lt;/a>
+  Section A
+&lt;/h2&gt;
+</pre> 
   <h2 id="some-target-1">
-      <a href="#a" 
-      aria-hidden="true" 
-      class="aal_anchor" 
-      id="a">
+      <a id="a" href="#a" aria-hidden="true">
       <svg aria-hidden="true" 
       class="aal_svg" 
       height="16" version="1.1" viewBox="0 0 16 16" width="16">
@@ -46,6 +69,35 @@
     </a>
     Section A</h2>
     <p>Lorem Ipsum...</p>
-
+    <h2 id="some-target-2">
+      <a id="b" href="#b" aria-hidden="true">
+      <svg aria-hidden="true" 
+      class="aal_svg" 
+      height="16" version="1.1" viewBox="0 0 16 16" width="16">
+        <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+      </svg>
+    </a>
+    Section B</h2>
+    <p>Lorem Ipsum...</p>
+    <h2 id="some-target-3">
+      <a id="c" href="#c" aria-hidden="true">
+      <svg aria-hidden="true" 
+      class="aal_svg" 
+      height="16" version="1.1" viewBox="0 0 16 16" width="16">
+        <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+      </svg>
+    </a>
+    Section C</h2>
+    <p>Lorem Ipsum...</p>
+    <h2 id="some-target-4">
+      <a id="d" href="#d" aria-hidden="true">
+      <svg aria-hidden="true" 
+      class="aal_svg" 
+      height="16" version="1.1" viewBox="0 0 16 16" width="16">
+        <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+      </svg>
+    </a>
+    Section D</h2>
+    <p>Lorem Ipsum...</p>
 </body>
 </html>     

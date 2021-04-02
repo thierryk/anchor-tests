@@ -3,40 +3,55 @@
 <head>
     <meta charset="utf-8">
     <title>Test B</title>
+    <link rel="stylesheet" href="../styles.css">
     <style>
         body {
             padding: 3em;
         }
-        [title]::after {
+        [title]::before {
             content: " (" attr(title) ") ";
+            clip: rect(1px, 1px, 1px, 1px);
+            clip-path: inset(50%);
+            height: 1px;
+            width: 1px;
+            margin: -1px;
+            overflow: hidden;
+            padding: 0;
+            position: absolute;
         }
 
     </style>
 </head>
 <body>
   <!--
-    Does :focus styling fail? YES (block-level elements inside anchor?)
-    It CANNOT include links in title
-    Title CANNOT be easily copied
-    Is the @title spoken?
-    What is announced when navigating via headings?
-    What is announced when navigating via links?
+
   -->
   <h1>Test B</h1>
-  <a href="#a" title="in-page link">
-    <h2 id="a">Section A</h2>
+  <h2>Markup</h2>
+  <pre tabindex="0" title="Markup Example">
+&lt;a href="#a" title="Anchor Link to "&gt;
+  &lt;h2 id="a" tabindex="-1">Section A&lt;/h2&gt;
+&lt;/a&gt;</pre>
+<h2>CSS</h2>
+  <pre tabindex="0" title="CSS Example">
+[title]::before {
+  content: " (" attr(title) ") ";
+  ...
+}</pre>
+  <a href="#a" title="Anchor Link to ">
+    <h2 id="a" tabindex="-1">Section A</h2>
   </a>
   <p>Lorem Ipsum...</p>
-  <a href="#b" title="in-page link">
-    <h2 id="b">Section B</h2>
+  <a href="#b" title="Anchor Link to ">
+    <h2 id="b" tabindex="-1">Section B</h2>
   </a>
   <p>Lorem Ipsum...</p>
-  <a href="#c" title="in-page link">
-    <h2 id="c">Section C</h2>
+  <a href="#c" title="Anchor Link to ">
+    <h2 id="c" tabindex="-1">Section C</h2>
   </a>
   <p>Lorem Ipsum...</p>
-  <a href="#d" title="in-page link">
-    <h2 id="d">Section D</h2>
+  <a href="#d" title="iAnchor Link to ">
+    <h2 id="d" tabindex="-1">Section D</h2>
   </a>
   <p>Lorem Ipsum...</p>
 </body>
