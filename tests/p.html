@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Test P</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      @font-face {
+  font-family: "custom-anchor-font";
+  src:url("/font/custom-anchor-font.eot");
+  src:url("/font/custom-anchor-font.eot?#iefix") format("embedded-opentype"),
+    url("/font/custom-anchor-font.woff") format("woff"),
+    url("/font/custom-anchor-font.ttf") format("truetype"),
+    url("/font/custom-anchor-font.svg#custom-anchor-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  }
+      .⚓-hn {
+        position: relative;
+      }
+      .⚓-link,
+      .⚓-hn:target::before {
+        position: absolute;
+        text-align: center;
+        box-sizing: border-box;
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        /* cheap reset */
+        font: 1.4rem sans-serif !important;
+        top: .5rem;
+        left: -2rem;
+      }
+      .⚓-hn:target::before {
+        content: "⚓";
+        z-index: 1;
+        padding: .15em;
+        background: #fff;
+        font-family: "custom-anchor-font" !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+</style>
+</head>
+<body>
+  <!-- 
+    
+  -->
+  <h1>Test P</h1>
+  <pre tabindex="0" title="Markup Example">
+&lt;h2 id="a" tabindex="-1" class="⚓-hn"&gt;
+  &lt;a href="#a" aria-labelledby="a" class="⚓-link"&gt;§&lt;/a&gt;
+  Section A
+&lt;/h2&gt;</pre>
+<h2 id="a" tabindex="-1" class="⚓-hn">
+  <a href="#a" aria-labelledby="a" class="⚓-link">§</a>
+  Section A
+</h2>
+<p>Lorem Ipsum...</p>
+<h2 id="b" tabindex="-1" class="⚓-hn">
+  <a href="#b" aria-labelledby="b" class="⚓-link">§</a>
+  Section B
+</h2>
+<p>Lorem Ipsum...</p>
+<h2 id="c" class="⚓-hn" tabindex="-1">
+  <a href="#c" aria-labelledby="c" class="⚓-link">§</a>
+  Section C
+</h2>
+<p>Lorem Ipsum...</p>
+<h2 id="d" tabindex="-1" class="⚓-hn">
+  <a href="#d" aria-labelledby="d" class="⚓-link">§</a>
+  Section D
+</h2>
+<p>Lorem Ipsum...</p>
+</body>
+</html>     

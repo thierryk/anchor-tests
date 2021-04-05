@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    <title>Test O</title>
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+      @font-face {
+  font-family: "custom-anchor-font";
+  src:url("/font/custom-anchor-font.eot");
+  src:url("/font/custom-anchor-font.eot?#iefix") format("embedded-opentype"),
+    url("/font/custom-anchor-font.woff") format("woff"),
+    url("/font/custom-anchor-font.ttf") format("truetype"),
+    url("/font/custom-anchor-font.svg#custom-anchor-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  }
+      .⚓-group {
+        position: relative;
+      }
+      .⚓-link,
+      .⚓-hn:target::before {
+        position: absolute;
+        text-align: center;
+        box-sizing: border-box;
+        width: 2rem;
+        height: 2rem;
+        text-align: center;
+        /* cheap reset */
+        font: 1.4rem sans-serif !important;
+        top: .5rem;
+        left: -2rem;
+      }
+      .⚓-hn:target::before {
+        content: "⚓";
+        padding: .15em;
+        background: #fff;
+        font-family: "custom-anchor-font" !important;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+</style>
+</head>
+<body>
+  <!-- 
+    
+  -->
+  <h1>Test O</h1>
+  <pre tabindex="0" title="Markup Example">
+&lt;div class="⚓-group"&gt;
+  &lt;a href="#a" class="⚓-link" aria-labelledby="a"&gt;§&lt;/a&gt;
+  &lt;h2 id="a" class="⚓-hn" tabindex="-1"&gt;
+    Section A
+  &lt;/h2&gt;
+&lt;/div&gt;</pre>
+<div class="⚓-group">
+  <a href="#a" class="⚓-link" aria-labelledby="a">§</a>
+  <h2 id="a" class="⚓-hn" tabindex="-1">
+    Section A
+  </h2>
+</div>
+<p>Lorem Ipsum...</p>
+<div class="⚓-group">
+  <a href="#b" class="⚓-link" aria-labelledby="b">§</a>
+  <h2 id="b" class="⚓-hn" tabindex="-1">
+    Section B
+  </h2>
+</div>
+<p>Lorem Ipsum...</p>
+<div class="⚓-group">
+  <a href="#c" class="⚓-link" aria-labelledby="c">§</a>
+  <h2 id="c" class="⚓-hn" tabindex="-1">
+    Section C
+  </h2>
+</div>
+<p>Lorem Ipsum...</p>
+<div class="⚓-group">
+  <a href="#d" class="⚓-link" aria-labelledby="d">§</a>
+  <h2 id="d" class="⚓-hn" tabindex="-1">
+    Section D
+  </h2>
+</div>
+<p>Lorem Ipsum...</p>
+</body>
+</html>     

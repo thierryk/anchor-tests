@@ -350,3 +350,5 @@ MigrationBackup/
 .ionide/
 
 workspace.code-workspace
+.DS_Store
+.gitignore
